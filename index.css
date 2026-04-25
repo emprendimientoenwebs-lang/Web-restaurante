@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0c0a09;
+}
+
+.hero-plane {
+  background-image: url("https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2200&q=85");
+  background-position: center;
+  background-size: cover;
+}
+
+.fade-down {
+  animation: fade-down 800ms ease-out both;
+}
+
+.fade-up {
+  animation: fade-up 900ms ease-out both;
+}
+
+.fade-up:nth-of-type(2) {
+  animation-delay: 120ms;
+}
+
+.fade-up:nth-of-type(3) {
+  animation-delay: 220ms;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
